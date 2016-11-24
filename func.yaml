@@ -1,0 +1,7 @@
+app: fnpython
+name: lwolf/fn_python
+version: 0.0.1
+route: /message
+build:
+- rm -Rf packages/
+- docker run --rm -v "$PWD":/worker -w /worker iron/python:3-dev pip install -t packages -r requirements.txt
